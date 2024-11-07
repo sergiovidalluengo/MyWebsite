@@ -8,15 +8,25 @@
 </head>
 <body>
   <header>
-    <h1>Bienvenido a Mi Sitio Web</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="about.html">Sobre mí</a>
-      <a href="projects.html">Proyectos</a>
-      <a href="contact.html">Contacto</a>
-      <span> | <a href="index_en.html">English</a></span>
-    </nav>
+    <div class="title-section">
+      <h1>Bienvenido a Mi Sitio Web</h1>
+      <nav class="top-right-menu">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Sobre mí</a>
+        <a href="projects.html">Proyectos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="index_en.html">English</a>
+      </nav>
+    </div>
   </header>
+
+  <section class="banner">
+    <!-- Placeholder images for the banner -->
+    <div class="banner-image" id="banner1"></div>
+    <div class="banner-image" id="banner2"></div>
+    <div class="banner-image" id="banner3"></div>
+    <!-- JavaScript will control the image rotation -->
+  </section>
 
   <main>
     <div class="left-panel">
@@ -41,5 +51,7 @@
   <footer>
     <p>&copy; 2024 Sergio | Todos los derechos reservados</p>
   </footer>
+
+  <script src="js/rotateBanner.js"></script> <!-- Link to JavaScript for rotating banner -->
 </body>
 </html>
