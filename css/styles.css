@@ -28,6 +28,11 @@ header {
   gap: 15px;
 }
 
+/* Justify all paragraphs */
+p {
+    text-align: justify;
+}
+
 .top-right-menu a {
   color: #fff;
   text-decoration: none;
