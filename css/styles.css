@@ -1,3 +1,16 @@
+/* Container to define consistent width */
+.container {
+    width: 80%; /* Set desired width, adjust as needed */
+    max-width: 1200px; /* Optional: limit the maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Top Panel and Banner Styling */
+header, .banner {
+    width: 100%; /* Take full width of the container */
+}
+
+
 * {
   margin: 0;
   padding: 0;
