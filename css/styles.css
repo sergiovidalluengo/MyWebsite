@@ -1,6 +1,6 @@
 /* Container to define consistent width */
 .container {
-    width: 80%; /* Set desired width, adjust as needed */
+    width: 70%; /* Set desired width, adjust as needed */
     max-width: 1200px; /* Optional: limit the maximum width */
     margin: 0 auto; /* Center the container */
 }
