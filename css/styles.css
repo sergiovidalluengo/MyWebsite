@@ -65,15 +65,15 @@ p {
 /* Banner Section */
 .banner {
   position: relative;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
   margin-top: 1em;
 }
 
 .banner-image {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   transition: opacity 1s ease-in-out;
