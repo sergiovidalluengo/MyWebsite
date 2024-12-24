@@ -13,15 +13,15 @@ body {
 
 /* Container for consistent width */
 .container {
-  width: 90%; /* Adjusted for smaller screens */
-  max-width: 1200px;
+  width: 80%; /* Adjusted for smaller screens */
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 /* About Page Container */
 .about-container {
-  width: 90%; /* Adjusted for smaller screens */
-  max-width: 1200px;
+  width: 80%; /* Adjusted for smaller screens */
+  max-width: 1000px;
   margin: 0 auto;
   padding-top: 0px;
 }
