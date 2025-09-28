@@ -104,10 +104,10 @@ main {
 }
 
 .left-panel, .right-panel {
-  flex: 1;
+  flex: 0.7;
 }
 .center-panel {
-  flex: 2;
+  flex: 2.6;
 }
 
 /* About Page Layout */
