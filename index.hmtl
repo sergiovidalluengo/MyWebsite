@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Tiempo Espacial</title>
+    <link rel="stylesheet" href="css/spaceweather.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <div class="header-icon">☀️</div>
+            <div>
+                <h1>Monitor de Tiempo Espacial</h1>
+                <p class="header-subtitle">Panel de Vigilancia en Tiempo Real</p>
+            </div>
+        </div>
+        <div class="header-center">
+            <h2 class="aurora-title"><a href="https://australaurora.cl/index.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Aurora Austral</a></h2>
+        </div>
+        <div class="header-right">
+            <div class="status-indicators">
+                <span class="status-badge" id="status-r" title="Radio Blackouts">R: <span>--</span></span>
+                <span class="status-badge" id="status-s" title="Solar Radiation">S: <span>--</span></span>
+                <span class="status-badge" id="status-g" title="Geomagnetic Storms">G: <span>--</span></span>
+            </div>
+            <div class="clock-container">
+                <div class="clock" id="utc-clock">--:--:-- UTC</div>
+                <div class="clock-label">Hora Universal Coordinada</div>
+            </div>
+            <div class="refresh-info">
+                <span id="last-update">--</span>
+                <span class="refresh-label">Próx. actualización en <span id="countdown">5:00</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-grid">
+
+        <!-- Row 1: Solar Images + ACE Data -->
+        <section class="panel panel-solar" id="panel-sunspots">
+            <div class="panel-header">
+                <h2>🌞 Manchas Solares</h2>
+                <span class="panel-source">SOHO/MDI</span>
+            </div>
+            <div class="panel-content image-container">
+                <img src="https://soho.nascom.nasa.gov/data/synoptic/sunspots_earth/mdi_sunspots_1024.jpg"
+                     alt="Manchas solares - SOHO/MDI"
+                     class="dashboard-image"
+                     id="img-sunspots"
+                     loading="lazy">
+            </div>
+        </section>
+
+        <section class="panel panel-solar" id="panel-soho">
+            <div class="panel-header">
+                <h2>🔭 Coronógrafo SOHO/LASCO C3</h2>
+                <span class="panel-source">SOHO/LASCO</span>
+            </div>
+            <div class="panel-content image-container">
+                <img src="https://soho.nascom.nasa.gov/data/LATEST/current_c3.gif"
+                     alt="Coronógrafo SOHO LASCO C3"
+                     class="dashboard-image"
+                     id="img-soho"
+                     loading="lazy">
+            </div>
+        </section>
+
+        <section class="panel panel-ace" id="panel-ace">
+            <div class="panel-header">
+                <h2>🛰️ Viento Solar - ACE MAG/SWEPAM</h2>
+                <span class="panel-source">ACE/SWPC - 24h</span>
+            </div>
+            <div class="panel-content image-container">
+                <img src="https://services.swpc.noaa.gov/images/ace-mag-swepam-24-hour.gif"
+                     alt="Datos ACE MAG/SWEPAM 24 horas"
+                     class="dashboard-image"
+                     id="img-ace"
+                     loading="lazy">
+            </div>
+        </section>
+
+        <!-- Row 2: GOES X-ray, Kp Index, GOES Proton Flux -->
+        <section class="panel panel-chart" id="panel-xray">
+            <div class="panel-header">
+                <h2>⚡ Flujo de Rayos X - GOES</h2>
+                <span class="panel-source">GOES-18 / SWPC</span>
+            </div>
+            <div class="panel-content chart-container">
+                <canvas id="chart-xray"></canvas>
+                <div class="chart-loading" id="loading-xray">Cargando datos...</div>
+            </div>
+        </section>
+
+        <section class="panel panel-chart" id="panel-kp">
+            <div class="panel-header">
+                <h2>🧲 Índice Kp Planetario</h2>
+                <span class="panel-source">NOAA/SWPC</span>
+            </div>
+            <div class="panel-content chart-container">
+                <canvas id="chart-kp"></canvas>
+                <div class="chart-loading" id="loading-kp">Cargando datos...</div>
+            </div>
+        </section>
+
+        <section class="panel panel-chart" id="panel-proton">
+            <div class="panel-header">
+                <h2>☢️ Flujo de Protones - GOES</h2>
+                <span class="panel-source">GOES-18 / SWPC</span>
+            </div>
+            <div class="panel-content chart-container">
+                <canvas id="chart-proton"></canvas>
+                <div class="chart-loading" id="loading-proton">Cargando datos...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>Datos proporcionados por <a href="https://www.swpc.noaa.gov/" target="_blank">NOAA/SWPC</a>,
+           <a href="https://soho.nascom.nasa.gov/" target="_blank">NASA/SOHO</a> y
+           <a href="https://www.swpc.noaa.gov/products/ace-real-time-solar-wind" target="_blank">ACE</a>.
+           Actualización automática cada 5 minutos.
+        </p>
+    </footer>
+
+    <script src="js/spaceweather.js"></script>
+</body>
+</html>
